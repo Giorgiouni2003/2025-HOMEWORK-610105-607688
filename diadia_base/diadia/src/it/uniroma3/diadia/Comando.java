@@ -15,12 +15,14 @@ import java.util.Scanner;
  * @version base
  */
 
-public class Comando {
+public class Comando { //classe per i comandi
 
     private String nome;
     private String parametro;
 
     public Comando(String istruzione) {
+
+	    
 		Scanner scannerDiParole = new Scanner(istruzione);
 
 		// prima parola: nome del comando
@@ -32,17 +34,18 @@ public class Comando {
 			this.parametro = scannerDiParole.next();
 
 		scannerDiParole.close();
+	    
     }
 
     public String getNome() {
         return this.nome;
     }
 
-    public String getParametro() {
+    public String getParametro() { //ottieni parametro
         return this.parametro;
     }
 
-    public boolean sconosciuto() {
+    public boolean sconosciuto() { // controlla fatti strani
         return (this.nome == null || this.nome.isEmpty());
     }
 }
