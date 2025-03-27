@@ -17,9 +17,10 @@ public class Partita {
     private Labirinto labirinto;
     private Stanza stanzaCorrente;
     private boolean finita;
-    private Giocatore giocatore; // referenza per Giocatore
+    private Giocatore giocatore; // creo un puntatore di tipo Giocatore
 
-    public Partita() {
+    public Partita()
+    {
         this.labirinto = new Labirinto();
         this.stanzaCorrente = labirinto.getStanzaIniziale();
         this.finita = false;
@@ -31,19 +32,22 @@ public class Partita {
         return this.stanzaCorrente;
     }
 
-    public void setStanzaCorrente(Stanza stanzaCorrente) {
+    public void setStanzaCorrente(Stanza stanzaCorrente) 
+    {
         this.stanzaCorrente = stanzaCorrente;
     }
 
-    public boolean vinta() {
+    public boolean vinta() { //verifico se ho vinto
         return this.getStanzaCorrente().equals(this.labirinto.getStanzaFinale());
     }
 
-    public boolean isFinita() {
+    public boolean isFinita() //verifico se la partita è finita
+    {
         return finita || vinta() || (this.giocatore.getCfu() == 0); // get CFU dal Giocatore
     }
 
-    public void setFinita() {
+    public void setFinita() 
+    {
         this.finita = true;
     }
 
