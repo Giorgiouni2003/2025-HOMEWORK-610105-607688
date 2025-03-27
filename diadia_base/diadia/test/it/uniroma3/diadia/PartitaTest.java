@@ -8,6 +8,8 @@ import it.uniroma3.diadia.ambienti.*;
 import it.uniroma3.diadia.giocatore.*;
 
 public class PartitaTest {
+
+	
 	private Partita p;
     private Labirinto l;
     private Giocatore g;
@@ -15,9 +17,13 @@ public class PartitaTest {
 
     @Before
     public void setUp() {
+
+	    
         l = new Labirinto();
         p = new Partita(l);
         g = p.getGiocatore();
+
+	    
     }
 	
 	//Test per il metoodo isFinita
@@ -46,6 +52,8 @@ public class PartitaTest {
 	
 	@Test
     public void testGetStanzaCorrenteDopoSet() {
+
+	    
 		Stanza stanza1 = new Stanza("stanza 1");
         p.setStanzaCorrente(stanza1);
         assertEquals(stanza1, p.getStanzaCorrente());
@@ -57,13 +65,18 @@ public class PartitaTest {
         Stanza stanza3 = new Stanza("stanza 3");
         p.setStanzaCorrente(stanza3);
         assertEquals(stanza3, p.getStanzaCorrente());
+
+	    
 	}
 	
 	@Test
 	public void testGetStanzaCorrenteDopoSetNull() {
+		
 		p.setStanzaCorrente(null);
 		assertNull(p.getStanzaCorrente());
+		
 	}
+	
 	
 	@Test
 	public void testGetStanzaCorrenteRestituisceStanzaVincente() {
@@ -78,26 +91,37 @@ public class PartitaTest {
 
 	@Test
 	public void testVintaDopoSetStanzaCorrenteNonVincente() {
+
+		
 		Stanza stanza1 = new Stanza("stanza 1");
 	    p.setStanzaCorrente(stanza1);
 	    assertFalse(p.vinta());
+
+		
 	}
 
 	@Test
 	public void testVintaDopoSetStanzaCorrenteVincente() {
+		
 	    p.setStanzaCorrente(l.getStanzaVincente());
 	    assertTrue(p.vinta());
+
+		
 	}
 	//Test per il metodo getLabirinto
 	@Test
 	public void testGetLabirinto() {
+
+		
 		assertEquals(l, p.getLabirinto());
 	}
 	
 	//Test per il metodo getGiocatore
 	@Test
 	public void tesGetGiocatore() {
+		
 		assertEquals(g, p.getGiocatore());
+		
 	}
 	
 
