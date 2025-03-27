@@ -21,25 +21,21 @@ public class Attrezzo {
 	 * @param nome il nome che identifica l'attrezzo
 	 * @param peso il peso dell'attrezzo
 	 */
-	public Attrezzo(String nome, int peso) {
+	public Attrezzo(String nome, int peso) { //costuttore della classe Attrezzo
 		this.peso = peso;
 		this.nome = nome;
 	}
 
-	/**
-	 * Restituisce il nome identificatore dell'attrezzo
-	 * @return il nome identificatore dell'attrezzo
-	 */
-	public String getNome() {
-		return this.nome;
+	
+	public String getNome() 
+	{
+		return this.nome;//setto il nome dell'attrezzo
 	}
 
-	/**
-	 * Restituisce il peso dell'attrezzo
-	 * @return il peso dell'attrezzo
-	 */
-	public int getPeso() {
-		return this.peso;
+	
+	public int getPeso()
+	{
+		return this.peso; //restituico un intero
 	}
 
 	/**
